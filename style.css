@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+  --ff-inter: "Inter", sans-serif;
+  --ff-lexe: "Lexend Deca", sans-serif;
+  --fs-b: 15px;
+  --pc-Very-dark-blue: hsl(233, 47%, 7%);
+  --pc-Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --pc-Soft-violet: hsl(277, 64%, 61%);
+  --nc-Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --nc-Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--pc-Very-dark-blue);
+  min-height: 100vh;
+  font-size: var(--fs-b);
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--pc-Dark-desaturated-blue);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 2rem;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text h1 span {
+  color: var(--pc-Soft-violet);
+}
+
+.hero-text h1 {
+  font-family: var(--ff-inter);
+  color: white;
+  font-size: 2rem;
+  padding-top: 3rem;
+  padding-left: 2.5rem;
+  padding-right: 4rem;
+  padding-bottom: 1.5rem;
+}
+
+.hero-text > p {
+  font-family: var(--ff-lexe);
+  color: var(--nc-Slightly-transparent-white);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  padding-left: 2.5rem;
+  padding-right: 8rem;
+  padding-bottom: 5rem;
+}
+
+.info {
+  display: flex;
+  font-family: var(--ff-inter);
+  color: white;
+  gap: 3rem;
+  padding-left: 2.5rem;
+}
+
+.info-com p {
+  text-transform: uppercase;
+  color: var(--nc-Slightly-transparent-white);
+  font-size: 10px;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-img {
+  position: relative;
+}
+
+.hero-img::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--pc-Soft-violet);
+  opacity: 0.4;
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .info {
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero-text {
+    text-align: center;
+  }
+  .hero-text h1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-text > p {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  .info {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+
+    gap: 1.5rem;
+  }
+
+  .hero-text > p {
+    padding-bottom: 3rem;
+  }
+}
